@@ -20,14 +20,10 @@ var commentRoutes = require("./routes/comments"),
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
 // });
-mongoose.connect(
-  "mongodb+srv://surajrane:surajsr@42@cluster0-esa0r.mongodb.net/test?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
-
+mongoose.connect(process.env.DATABASEURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 app.use(flash());
 
 // seedDB();
